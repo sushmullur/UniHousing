@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "365242308647",
+    "project_id": "unihousing-65b12",
+    "storage_bucket": "unihousing-65b12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365242308647:android:e4875297c1418bc7e31602",
+        "android_client_info": {
+          "package_name": "com.example.uni_housing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365242308647-rl0nfjjegst4ccssdib0j19kg020lmag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK1eh3ggIaIto2rSfbG00AUzkcE4s7sd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365242308647-iogsr6c6680852u82e11vd29vsv9v5eb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "365242308647-35qai721qgp1499dcfmlp738iu7aol5v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unihousing.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
