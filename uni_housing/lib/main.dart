@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'UniHousing',
       theme: ThemeData(
-        brightness: Brightness.dark,
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),

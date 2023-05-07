@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:supabase/supabase.dart';
+import 'ListingDetails.dart';
 import 'AddListing.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -49,10 +50,20 @@ class _MyHomePageState extends State<MyHomePage> {
               itemCount: filteredData?.length ?? 0,
               itemBuilder: (context, index) {
                 final rowData = filteredData![index];
-                return ListTile(
-                  title: Text(rowData['location']),
-                  subtitle: Text(rowData['type']),
-                  trailing: Text('\$${rowData['price']}'),
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ListingDetails(rowData: rowData),
+                      ),
+                    );
+                  },
+                  child: ListTile(
+                    title: Text(rowData['location']),
+                    subtitle: Text(rowData['type']),
+                    trailing: Text('\$${rowData['price']}'),
+                  ),
                 );
               },
             ),
