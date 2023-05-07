@@ -23,7 +23,7 @@ class _ListingDetailsState extends State<ListingDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.network(
-              'https://picsum.photos/150',
+              'https://picsum.photos/1080',
               height: 150,
               width: double.infinity,
               fit: BoxFit.cover,

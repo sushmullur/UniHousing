@@ -1,0 +1,3 @@
+const supabaseUrl = 'https://rcpkridasasiogqowqjh.supabase.co';
+const supabaseAnonKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjcGtyaWRhc2FzaW9ncW93cWpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODMzMzEzMzcsImV4cCI6MTk5ODkwNzMzN30.XTZtqyq2Jwk5D-4LBRivi-xjANmaz3_-Lh9xmyj5od4';
