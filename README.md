@@ -30,12 +30,10 @@ To get started with this project, you will need to have Flutter and Supabase set
 4. In the `lib` directory, create a file named `supabase_config.dart` with the following contents:
 
    ```dart
-   import 'package:supabase/supabase.dart';
+   
+   const supabaseUrl = 'PROJECT_URL';
+   const supabaseAnonKey ='ANON_KEY';
 
-   final supabase = SupabaseClient(
-     'YOUR_API_ENDPOINT',
-     'YOUR_API_KEY',
-   );
    ```
 
    Replace `YOUR_API_ENDPOINT` and `YOUR_API_KEY` with the values from your own Supabase project.
