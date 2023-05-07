@@ -17,8 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'UniHousing',
       theme: ThemeData(
+        brightness: Brightness.dark,
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
