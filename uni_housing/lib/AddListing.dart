@@ -9,10 +9,29 @@ class AddListing extends StatefulWidget {
 }
 
 class _AddListingState extends State<AddListing> {
+  //coed or not
   String _selectedType = 'co-ed';
+
+  //price
   final _priceController = TextEditingController();
+
+  //description
   final _descriptionController = TextEditingController();
+
+  //location
   final _locationController = TextEditingController();
+
+  //state
+  final _stateController = TextEditingController();
+
+  //city
+  final _cityController = TextEditingController();
+
+  //zipcode
+  final _zipcodeController = TextEditingController();
+
+  //address
+  final _addressLineController = TextEditingController();
 
   @override
   void dispose() {
@@ -68,6 +87,26 @@ class _AddListingState extends State<AddListing> {
               controller: _locationController,
             ),
             SizedBox(height: 16),
+            Text('Street Address'),
+            TextField(
+              controller: _addressLineController,
+            ),
+            SizedBox(height: 16),
+            Text('City'),
+            TextField(
+              controller: _cityController,
+            ),
+            SizedBox(height: 16),
+            Text('State'),
+            TextField(
+              controller: _stateController,
+            ),
+            SizedBox(height: 16),
+            Text('Zipcode'),
+            TextField(
+              controller: _zipcodeController,
+            ),
+            SizedBox(height: 16),
             ElevatedButton(
               onPressed: _addListing,
               child: Text('Add Listing'),
@@ -79,12 +118,17 @@ class _AddListingState extends State<AddListing> {
   }
 
   void _addListing() async {
+    int zipcode = int.tryParse(_zipcodeController.text) ?? 0;
     final response =
         await Supabase.instance.client.from('housing_data').insert({
       'price': _priceController.text,
       'type': _selectedType,
       'description': _descriptionController.text,
       'location': _locationController.text,
+      'state': _stateController.text,
+      'city': _cityController.text,
+      'zipcode': zipcode,
+      'address_line': _addressLineController.text,
     }).execute();
     if (response != null) {
       Navigator.pushReplacement(
