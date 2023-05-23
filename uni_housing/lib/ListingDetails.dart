@@ -16,6 +16,7 @@ class _ListingDetailsState extends State<ListingDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: Text(widget.rowData['location']),
       ),
       body: SingleChildScrollView(

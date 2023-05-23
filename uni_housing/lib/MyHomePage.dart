@@ -23,10 +23,16 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.blue,
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
         onPressed: _goToAddListing,
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: Color.fromARGB(255, 33, 79, 243),
+        ),
       ),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        elevation: 0,
         backgroundColor: Colors.blue,
         title: Text(
           'UniHousing',
@@ -76,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         rowData['location'],
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      subtitle: Text(rowData['type']),
+                      subtitle: Text('Type: ' + rowData['type']),
                       trailing: Container(
                         child: SizedBox(
                           height: 100,
@@ -118,7 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> _fetchHousingData() async {
     final response = await Supabase.instance.client
         .from('housing_data')
-        .select('location, price, type, description')
+        .select(
+            'location, price, type, description, city, zipcode, address_line, state')
         .execute();
     setState(() {
       _housingData = response.data;
