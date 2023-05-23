@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:supabase/supabase.dart';
+import 'package:image_picker/image_picker.dart';
+
 import 'MyHomePage.dart';
 
 class AddListing extends StatefulWidget {
@@ -32,6 +34,8 @@ class _AddListingState extends State<AddListing> {
 
   //address
   final _addressLineController = TextEditingController();
+
+  XFile? _selectedImage;
 
   @override
   void dispose() {
@@ -276,6 +280,15 @@ class _AddListingState extends State<AddListing> {
         ),
       ),
     );
+  }
+
+  Future<void> _selectImage() async {
+    final imagePicker = ImagePicker();
+    final selectedImage =
+        await imagePicker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      _selectedImage = selectedImage;
+    });
   }
 
   void _addListing() async {

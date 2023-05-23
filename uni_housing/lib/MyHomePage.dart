@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final response = await Supabase.instance.client
         .from('housing_data')
         .select(
-            'location, price, type, description, city, zipcode, address_line, state')
+            'location, price, type, description, city, zipcode, address_line, state, image_url')
         .execute();
     setState(() {
       _housingData = response.data;
