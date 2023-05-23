@@ -282,15 +282,6 @@ class _AddListingState extends State<AddListing> {
     );
   }
 
-  Future<void> _selectImage() async {
-    final imagePicker = ImagePicker();
-    final selectedImage =
-        await imagePicker.pickImage(source: ImageSource.gallery);
-    setState(() {
-      _selectedImage = selectedImage;
-    });
-  }
-
   void _addListing() async {
     int zipcode = int.tryParse(_zipcodeController.text) ?? 0;
     final response =
